@@ -1,0 +1,29 @@
+{
+  "name": "peakio-client",
+  "version": "0.1.0",
+  "description": "Peakio Client — a lightweight branded wrapper for venge.io",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder"
+  },
+  "author": "Peakio",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "discord-rpc": "^4.0.1"
+  },
+  "build": {
+    "appId": "io.peakio.client",
+    "productName": "Peakio Client",
+    "directories": { "output": "dist" },
+    "files": ["main.js", "preload.js", "overlay/**", "assets/**"],
+    "win": { "target": "nsis", "icon": "assets/icon.ico" },
+    "mac": { "target": "dmg", "icon": "assets/icon.icns", "category": "public.app-category.games" },
+    "linux": { "target": "AppImage", "icon": "assets/icon.png" },
+    "nsis": { "oneClick": false, "allowToChangeInstallDirectory": true }
+  }
+}
